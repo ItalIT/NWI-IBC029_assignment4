@@ -25,3 +25,7 @@ layout ∷ (Show elem) => Tree elem → String
 build ∷ [elem] → Tree elem
 balanced ∷ [elem] → Tree elem
 create ∷ Int → Tree ()
+
+--------------------------------------------------------------------------------
+author: Hendrik Werner s4549775
+author: Jasper Haasdijk s4449754

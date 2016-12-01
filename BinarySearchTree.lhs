@@ -14,3 +14,7 @@ delete ∷ (Ord elem) ⇒ elem → Tree elem → Tree elem
 
 isSearchTree ∷ (Ord elem) ⇒ Tree elem → Bool
 trees ∷ [elem] → Probes (Tree elem)  -- should be defined in BinaryTree
+
+--------------------------------------------------------------------------------
+author: Hendrik Werner s4549775
+author: Jasper Haasdijk s4449754

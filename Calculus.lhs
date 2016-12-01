@@ -23,3 +23,7 @@ infixr 9 :.:
 apply    ∷ Function → (Double → Double)
 derive   ∷ Function → Function
 simplify ∷ Function → Function
+
+--------------------------------------------------------------------------------
+author: Hendrik Werner s4549775
+author: Jasper Haasdijk s4449754

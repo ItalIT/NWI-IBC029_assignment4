@@ -20,3 +20,7 @@ insert ∷ (Ord elem) ⇒ elem → RedBlackTree elem → RedBlackTree elem
 black ∷ RedBlackTree elem → elem → RedBlackTree elem → RedBlackTree elem
 isRedBlackTree ∷ RedBlackTree elem → Bool
 redBlackTrees ∷ [elem] → Probes (RedBlackTree elem)
+
+--------------------------------------------------------------------------------
+author: Hendrik Werner s4549775
+author: Jasper Haasdijk s4449754
