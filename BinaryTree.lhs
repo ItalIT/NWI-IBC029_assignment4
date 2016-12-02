@@ -33,6 +33,21 @@ author: Jasper Haasdijk s4449754
 exercise 1.1
 ============
 
+This is the binary tree from figure 1.
+
+> tree :: Tree Char
+> tree = Node (
+>            Node Empty 'a' (
+>                Node Empty 'b' Empty
+>            )
+>        ) 'c' (
+>            Node (
+>                Node Empty 'd' Empty
+>            ) 'f' (
+>                Node Empty 'g' Empty
+>            )
+>        )
+
 exercise 1.2
 ============
 
