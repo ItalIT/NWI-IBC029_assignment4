@@ -54,6 +54,16 @@ exercise 1.2
 exercise 1.3
 ============
 
+Tree design pattern
+
+f :: Tree elem -> S
+f Empty = ...
+f (Node l k r) = ... l ... k ... r
+
+> size :: Tree elem -> Int
+> size Empty = 0
+> size (Node l k r) = size l + 1 + size r
+
 exercise 1.4
 ============
 
