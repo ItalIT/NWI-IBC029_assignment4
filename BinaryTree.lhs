@@ -102,3 +102,12 @@ exercise 2.1
 
 exercise 2.2
 ============
+
+exercise 3.1
+============
+
+exercise 3.2
+============
+
+exercise 3.3
+============
