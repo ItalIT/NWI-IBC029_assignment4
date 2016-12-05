@@ -88,5 +88,17 @@ exercise 1.6
 exercise 2.1
 ============
 
+> preorder :: Tree elem -> [elem]
+> preorder Empty = []
+> preorder (Node l k r) = k:preorder l ++ preorder r
+
+> inorder :: Tree elem -> [elem]
+> inorder Empty = []
+> inorder (Node l k r) = inorder l ++ k:inorder r
+
+> postorder :: Tree elem -> [elem]
+> postorder Empty = []
+> postorder (Node l k r) = postorder l ++ postorder r ++ [k]
+
 exercise 2.2
 ============
