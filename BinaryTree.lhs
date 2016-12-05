@@ -67,6 +67,14 @@ f (Node l k r) = ... l ... k ... r
 exercise 1.4
 ============
 
+> minHeight :: Tree elem -> Int
+> minHeight Empty = 0
+> minHeight (Node l k r) = 1 + min (minHeight l) (minHeight r)
+
+> maxHeight :: Tree elem -> Int
+> maxHeight Empty = 0
+> maxHeight (Node l k r) = 1 + max (minHeight l) (minHeight r)
+
 exercise 1.5
 ============
 
