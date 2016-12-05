@@ -84,3 +84,9 @@ exercise 1.6
 > member :: (Eq elem) => elem -> Tree elem -> Bool
 > member e Empty = False
 > member e (Node l k r) = e == k || member e l || member e r
+
+exercise 2.1
+============
+
+exercise 2.2
+============
