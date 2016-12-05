@@ -106,6 +106,12 @@ exercise 2.2
 exercise 3.1
 ============
 
+This function builds really unbalanced trees but "inorder . build = id".
+
+> build :: [elem] -> Tree elem
+> build [] = Empty
+> build (e:es) = Node Empty e (build es)
+
 exercise 3.2
 ============
 
