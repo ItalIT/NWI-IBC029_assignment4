@@ -119,10 +119,10 @@ exercise 2.2
 >     where formattedLines = map buildLine nodeInfos
 >           nodeInfos = reverse $ inorderInfo tree 0 Root
 >           buildLine (i, d, c) = indentation d ++ childIndicator c ++ show i
->           indentation d = replicate (d * 3 + 1) ' '
+>           indentation d = replicate (d * 4 + 1) ' '
 >           childIndicator s = case s of
->                    RightChild -> "/"
->                    LeftChild -> "\\"
+>                    RightChild -> "/ "
+>                    LeftChild -> "\\ "
 >                    Root -> "-"
 
 > data ChildStatus = Root | LeftChild | RightChild
