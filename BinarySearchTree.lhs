@@ -2,7 +2,7 @@
 > module BinarySearchTree
 > where
 > import Unicode
-> import BinaryTree  -- hiding (member)
+> import BinaryTree hiding (member)
 > import QuickTest
 
 > registry  ∷  Tree String
@@ -21,6 +21,13 @@ author: Jasper Haasdijk s4449754
 
 exercise 4.1
 ============
+
+> member :: (Ord elem) => elem -> Tree elem -> Bool
+> member e Empty = False
+> member e (Node l k r) = case compare e k of
+>                         EQ -> True
+>                         LT -> member e l
+>                         GT -> member e r
 
 exercise 4.2
 ============
