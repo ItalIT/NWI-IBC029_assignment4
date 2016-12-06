@@ -45,5 +45,26 @@ exercise 4.2
 exercise 4.3
 ============
 
+> minKey :: Tree elem -> elem
+> minKey (Node Empty k _r) = k
+> minKey (Node l _k _r) = minKey l
+
+> maxKey :: Tree elem -> elem
+> maxKey (Node _l k Empty) = k
+> maxKey (Node _l _k r) = maxKey r
+
+> delete :: (Ord elem) => elem -> Tree elem -> Tree elem
+> delete _e Empty = Empty
+> delete e (Node Empty k Empty) = if k == e then Empty else Node Empty k Empty
+> delete e (Node l k Empty)
+>     | e == k = Node (delete predecessor l) predecessor Empty
+>     | otherwise = Node (delete e l) k Empty
+>     where predecessor = maxKey l
+> delete e (Node l k r)
+>     | e < k = Node (delete e l) k r
+>     | e > k = Node l k (delete e r)
+>     | e == k = Node l successor (delete successor r)
+>     where successor = minKey r
+
 exercise 4.4
 ============
