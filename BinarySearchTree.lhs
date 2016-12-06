@@ -30,7 +30,8 @@ exercise 4.1
 >                         GT -> member e r
 
 The difference between this exercise and 4.1.6 is that here we have an ordering
-in the tree which potentially has a much higher runtime efficiency.
+in the tree which potentially has a much higher runtime efficiency. At each step
+we can decide whether to go left or right and don't have to do both.
 
 exercise 4.2
 ============
