@@ -51,6 +51,12 @@ This is the binary tree from figure 1.
 exercise 1.2
 ============
 
+Node Empty 4711 (Node Empty 0815 (Node Empty 42 Empty))
+
+Node (Node (Node Empty "Frits" Empty) "Peter" Empty) "Ralf" Empty
+
+Node (Node Empty 'a' Empty) 'k' (Node Empty 'z' Empty)
+
 exercise 1.3
 ============
 
@@ -78,6 +84,10 @@ exercise 1.4
 exercise 1.5
 ============
 
+The size of the tree is greater or equal to the maximal height of a tree, which
+is in turn greater or equal to the minimal height of a tree:
+minHeight <= maxHeight <= size
+
 exercise 1.6
 ============
 
@@ -102,6 +112,11 @@ exercise 2.1
 
 exercise 2.2
 ============
+
+layout :: (Show elem) => Tree elem -> String
+
+map (\x -> "   " ++ x) layout l
+["   " ++ x| x <- layout l]
 
 exercise 3.1
 ============
