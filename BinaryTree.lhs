@@ -130,5 +130,13 @@ This function builds really unbalanced trees but "inorder . build = id".
 exercise 3.2
 ============
 
+> balanced :: [elem] -> Tree elem
+> balanced [] = Empty
+> balanced elems = Node (balanced firstHalf) k (balanced secondHalf)
+>                 where halfLength = (length elems) `div` 2
+>                       firstHalf = take halfLength elems
+>                       secondHalf = drop (halfLength + 1) elems
+>                       k = head $ drop halfLength elems
+
 exercise 3.3
 ============
