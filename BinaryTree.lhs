@@ -2,6 +2,7 @@
 > module BinaryTree
 > where
 > import Unicode
+> import Data.List
 
 > data Tree elem = Empty | Node (Tree elem) elem (Tree elem)
 >   deriving (Show)
@@ -113,10 +114,23 @@ exercise 2.1
 exercise 2.2
 ============
 
-layout :: (Show elem) => Tree elem -> String
+> layout :: (Show elem) => Tree elem -> String  
+> layout x = intersperse "\n" formattedLines
+>        where formattedLines = map functie nodeInfos
+>              nodeInfos = reverse $ inorderInfo tree 0 Root
+>              functie (i, d, c) = replicate (d + 1) ' ' ++ charInfo c ++ show i
+>              charInfo s = case s of 
+>                       RightChild -> "\\"
+>                       LeftChild -> "/"
+>                       Root -> "-"
 
-map (\x -> "   " ++ x) layout l
-["   " ++ x| x <- layout l]
+> data ChildStatus = Root | LeftChild | RightChild deriving (Show)
+> type NodeInfos elem = [(elem, Integer, ChildStatus)]
+> inorderInfo :: Tree elem -> Integer -> ChildStatus -> NodeInfos elem
+> inorderInfo Empty depth child = []
+> inorderInfo (Node l k r) depth child = leftInfo ++ (k, depth, child):rightInfo
+>       where leftInfo = inorderInfo l (depth + 1) LeftChild
+>             rightInfo = inorderInfo r (depth + 1) RightChild
 
 exercise 3.1
 ============
