@@ -29,6 +29,9 @@ exercise 4.1
 >                         LT -> member e l
 >                         GT -> member e r
 
+The difference between this exercise and 4.1.6 is that here we have an ordering
+in the tree which potentially has a much higher runtime efficiency.
+
 exercise 4.2
 ============
 
