@@ -54,9 +54,21 @@ exercise 1.2
 
 Node Empty 4711 (Node Empty 0815 (Node Empty 42 Empty))
 
+        / 42
+    / 815
+-4711
+
 Node (Node (Node Empty "Frits" Empty) "Peter" Empty) "Ralf" Empty
 
+-"Ralf"
+    \ "Peter"
+        \ "Frits"
+
 Node (Node Empty 'a' Empty) 'k' (Node Empty 'z' Empty)
+
+    / 'z'
+-'k'
+    \ 'a'
 
 exercise 1.3
 ============
