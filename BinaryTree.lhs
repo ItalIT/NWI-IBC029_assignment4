@@ -115,21 +115,22 @@ exercise 2.2
 ============
 
 > layout :: (Show elem) => Tree elem -> String  
-> layout x = intersperse "\n" formattedLines
->        where formattedLines = map functie nodeInfos
->              nodeInfos = reverse $ inorderInfo tree 0 Root
->              functie (i, d, c) = replicate (d + 1) ' ' ++ charInfo c ++ show i
->              charInfo s = case s of 
->                       RightChild -> "\\"
->                       LeftChild -> "/"
->                       Root -> "-"
+> layout x = intercalate "\n" formattedLines
+>     where formattedLines = map buildLine nodeInfos
+>           nodeInfos = reverse $ inorderInfo tree 0 Root
+>           buildLine (i, d, c) = indentation d ++ childIndicator c ++ show i
+>           indentation d = replicate (d * 3 + 1) ' '
+>           childIndicator s = case s of
+>                    RightChild -> "/"
+>                    LeftChild -> "\\"
+>                    Root -> "-"
 
 > data ChildStatus = Root | LeftChild | RightChild
 >     deriving (Show)
 
-> type NodeInfos elem = [(elem, Integer, ChildStatus)]
+> type NodeInfos elem = [(elem, Int, ChildStatus)]
 
-> inorderInfo :: Tree elem -> Integer -> ChildStatus -> NodeInfos elem
+> inorderInfo :: Tree elem -> Int -> ChildStatus -> NodeInfos elem
 > inorderInfo Empty depth child = []
 > inorderInfo (Node l k r) depth child = leftInfo ++ (k, depth, child):rightInfo
 >       where leftInfo = inorderInfo l (depth + 1) LeftChild
