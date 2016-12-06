@@ -35,6 +35,12 @@ in the tree which potentially has a much higher runtime efficiency.
 exercise 4.2
 ============
 
+> insert :: (Ord elem) => elem -> Tree elem -> Tree elem
+> insert e Empty = Node Empty e Empty
+> insert e (Node l k r)
+>     | e < k || e == k = Node (insert e l) k r
+>     | otherwise = Node l k (insert e r)
+
 exercise 4.3
 ============
 
