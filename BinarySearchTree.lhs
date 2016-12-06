@@ -46,10 +46,12 @@ exercise 4.3
 ============
 
 > minKey :: Tree elem -> elem
+> minKey Empty = error "This function does not work with empty lists."
 > minKey (Node Empty k _r) = k
 > minKey (Node l _k _r) = minKey l
 
 > maxKey :: Tree elem -> elem
+> maxKey Empty = error "This function does not work with empty lists."
 > maxKey (Node _l k Empty) = k
 > maxKey (Node _l _k r) = maxKey r
 
