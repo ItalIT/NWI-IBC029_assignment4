@@ -23,7 +23,7 @@ exercise 4.1
 ============
 
 > member :: (Ord elem) => elem -> Tree elem -> Bool
-> member e Empty = False
+> member _e Empty = False
 > member e (Node l k r) = case compare e k of
 >                         EQ -> True
 >                         LT -> member e l

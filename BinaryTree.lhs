@@ -69,18 +69,18 @@ f (Node l k r) = ... l ... k ... r
 
 > size :: Tree elem -> Int
 > size Empty = 0
-> size (Node l k r) = size l + 1 + size r
+> size (Node l _k r) = size l + 1 + size r
 
 exercise 1.4
 ============
 
 > minHeight :: Tree elem -> Int
 > minHeight Empty = 0
-> minHeight (Node l k r) = 1 + min (minHeight l) (minHeight r)
+> minHeight (Node l _k r) = 1 + min (minHeight l) (minHeight r)
 
 > maxHeight :: Tree elem -> Int
 > maxHeight Empty = 0
-> maxHeight (Node l k r) = 1 + max (minHeight l) (minHeight r)
+> maxHeight (Node l _k r) = 1 + max (minHeight l) (minHeight r)
 
 exercise 1.5
 ============
@@ -93,7 +93,7 @@ exercise 1.6
 ============
 
 > member :: (Eq elem) => elem -> Tree elem -> Bool
-> member e Empty = False
+> member _e Empty = False
 > member e (Node l k r) = e == k || member e l || member e r
 
 exercise 2.1
@@ -131,7 +131,7 @@ exercise 2.2
 > type NodeInfos elem = [(elem, Int, ChildStatus)]
 
 > inorderInfo :: Tree elem -> Int -> ChildStatus -> NodeInfos elem
-> inorderInfo Empty depth child = []
+> inorderInfo Empty _depth _child = []
 > inorderInfo (Node l k r) depth child = leftInfo ++ (k, depth, child):rightInfo
 >       where leftInfo = inorderInfo l (depth + 1) LeftChild
 >             rightInfo = inorderInfo r (depth + 1) RightChild
