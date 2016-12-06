@@ -157,3 +157,8 @@ exercise 3.2
 
 exercise 3.3
 ============
+
+Harry the Hacker is a quacksalver. It is literally impossible to construct a
+tree more efficient than O(n) since you need to add each node individually. This
+is the case since sometimes the tree is not a complete tree which means that not
+every node has both child nodes.
