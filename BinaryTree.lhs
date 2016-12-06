@@ -124,8 +124,11 @@ exercise 2.2
 >                       LeftChild -> "/"
 >                       Root -> "-"
 
-> data ChildStatus = Root | LeftChild | RightChild deriving (Show)
+> data ChildStatus = Root | LeftChild | RightChild
+>     deriving (Show)
+
 > type NodeInfos elem = [(elem, Integer, ChildStatus)]
+
 > inorderInfo :: Tree elem -> Integer -> ChildStatus -> NodeInfos elem
 > inorderInfo Empty depth child = []
 > inorderInfo (Node l k r) depth child = leftInfo ++ (k, depth, child):rightInfo
