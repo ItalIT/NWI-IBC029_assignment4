@@ -117,7 +117,7 @@ exercise 2.2
 > layout :: (Show elem) => Tree elem -> String  
 > layout x = intercalate "\n" formattedLines
 >     where formattedLines = map buildLine nodeInfos
->           nodeInfos = reverse $ inorderInfo tree 0 Root
+>           nodeInfos = reverse $ inorderInfo x 0 Root
 >           buildLine (i, d, c) = indentation d ++ childIndicator c ++ show i
 >           indentation d = replicate (d * 4 + 1) ' '
 >           childIndicator s = case s of
