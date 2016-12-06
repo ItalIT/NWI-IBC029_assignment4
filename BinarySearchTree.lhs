@@ -70,3 +70,13 @@ exercise 4.3
 
 exercise 4.4
 ============
+
+> isSearchTree :: (Ord elem) => Tree elem -> Bool
+> isSearchTree = ordered . inorder
+
+> ordered :: (Ord elem) => [elem] -> Bool
+> ordered [] = True
+> ordered [x] = True
+> ordered (x:x1:xs)
+>     | x <= x1 = ordered (x1:xs)
+>     | otherwise = False
