@@ -92,7 +92,7 @@ exercise 1.4
 
 > maxHeight :: Tree elem -> Int
 > maxHeight Empty = 0
-> maxHeight (Node l _k r) = 1 + max (minHeight l) (minHeight r)
+> maxHeight (Node l _k r) = 1 + max (maxHeight l) (maxHeight r)
 
 exercise 1.5
 ============
