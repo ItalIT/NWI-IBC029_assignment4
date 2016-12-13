@@ -28,6 +28,17 @@ author: Jasper Haasdijk s4449754
 exercise 5.1
 ============
 
+> member :: (Ord elem) => elem -> RedBlackTree elem -> Bool
+> member e Leaf = False
+> member e (Red l k r)
+>     | e < k = member e l
+>     | e == k = True
+>     | e > k = member e r
+> member e (Black l k r)
+>     | e < k = member e l
+>     | e == k = True
+>     | e > k = member e r
+
 exercise 5.2
 ============
 
