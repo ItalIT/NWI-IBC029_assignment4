@@ -29,7 +29,7 @@ exercise 5.1
 ============
 
 > member :: (Ord elem) => elem -> RedBlackTree elem -> Bool
-> member e Leaf = False
+> member _e Leaf = False
 > member e (Red l k r)
 >     | e < k = member e l
 >     | e == k = True
