@@ -43,7 +43,7 @@ exercise 5.2
 ============
 
 I really, really do not get why this is not working but I used almost all 4
-hours of the werkcollege  and my whole afternoon to get to this point.
+hours of the computer practicum and my whole afternoon to get to this point.
 
 I asked several student assistants multiple times and noone could help me
 resolve this.
