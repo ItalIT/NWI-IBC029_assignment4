@@ -97,3 +97,18 @@ exercise 5.3
 >     where blackH Leaf = 1
 >           blackH (Red l k r) = max (blackH l) (blackH r)
 >           blackH (Black l k r) = max (blackH l) (blackH r) + 1
+
+You can verify a RedBlackTree using
+
+([tree] --> (==isRbTree)) isRedBlackTree
+
+for example:
+
+([Black (Red Leaf "a" Leaf) "b" (Red Leaf "c" Leaf)] --> (== True))
+
+which evaluates to True, or
+
+([Black (Red Leaf "a" Leaf) "b" (Red Leaf "c" Leaf)] --> (== False))
+isRedBlackTree
+
+which also evaluates to True.
