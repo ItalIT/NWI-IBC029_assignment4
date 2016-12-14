@@ -78,3 +78,22 @@ but breaks for higher depths.
 
 exercise 5.3
 ============
+
+> isRedBlackTree :: RedBlackTree elem -> Bool
+> isRedBlackTree Leaf = True
+> isRedBlackTree (Red (Red _ _ _) _ _) = False
+> isRedBlackTree (Red _ _ (Red _ _ _)) = False
+> isRedBlackTree (Black l k r)
+>     = blackHeight l == blackHeight r
+> isRedBlackTree (Red l k r) = blackHeight l == blackHeight r
+
+> blackHeight :: RedBlackTree elem -> Integer
+> blackHeight Leaf = 0
+> blackHeight t@(Black l k r) = blackH t
+>     where blackH Leaf = 0
+>           blackH (Red l k r) = max (blackH l) (blackH r)
+>           blackH (Black l k r) = max (blackH l) (blackH r) + 1
+> blackHeight t@(Red l k r) = blackH t
+>     where blackH Leaf = 1
+>           blackH (Red l k r) = max (blackH l) (blackH r)
+>           blackH (Black l k r) = max (blackH l) (blackH r) + 1
